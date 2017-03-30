@@ -1,0 +1,40 @@
+{
+  "name": "neaht.io",
+  "version": "0.0.1",
+  "description": "What rooms for night-owls",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-jsx": "watchify jsx/app.jsx -o public/js/bundle.js -v",
+    "watch-sass": "node-sass styles/main.sass public/styles/bundle.css -w --output-style compressed",
+    "start": "npm run watch-jsx | npm run watch-sass | nodemon server.js",
+    "build": "browserify jsx/app.jsx | uglifyjs > public/js/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "author": "Mads Cordes",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "jest": "^19.0.2",
+    "node-sass": "^4.5.1",
+    "reactify": "^1.1.1",
+    "uglify-js": "^2.8.16",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "node-jsx": "^0.13.3",
+    "pug": "^2.0.0-beta11",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "socket.io": "^1.7.3"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+#room
+  +size(100%, 100%)
+
+  .heaven
+    +size(inherit, 50px)
+    margin-bottom: 0
+
+  #owls
+    +size(250px, calc(100% - 50px))
+    background: lighten($heaven, 50%)
+    float: left
+
+  #chat
+    +size(calc(100% - 250px), calc(100% - 50px))
+    float: left
+    text-align: center
+    padding-bottom: 5px
+    display: flex
+    flex-direction: column
+
+    #messages
+      text-align: left
+      order: 1
+      flex-grow: 2
+
+    [id^="input-"]
+      width: 100%
+      order: 2
+      flex-grow: 1

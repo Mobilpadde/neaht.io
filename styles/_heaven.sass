@@ -1,0 +1,53 @@
+$num: 2000
+
+// http://codepen.io/saransh/pen/BKJun
+=stars($n)
+  $value: '#{random($num)}px #{random($num)}px #fff'
+  @for $i from 2 through $n
+    $value: '#{$value}, #{random($num)}px #{random($num)}px #fff'
+
+  box-shadow: unquote($value)
+
+@keyframes beam
+  0%
+    transform: translateY(0px)
+  100%
+    transform: translateY(-#{$num}px)
+
+.heaven
+  +size(100%, 250px)
+  background: $heaven
+  color: #fff
+  display: block
+  position: relative
+  margin-bottom: 50px
+  overflow: hidden
+
+  h1
+    font-size: 8em
+    text-align: center
+    margin: 0
+    transform: translateY(85%)
+
+    &:after
+      content: ".io"
+      font-size: 0.4em
+
+    h1
+      display: none
+    
+  .stars
+    +size(2px, 2px)
+    +stars(600)
+    animation: beam 400s linear
+
+    &.medium
+      +size(4px, 4px)
+      +stars(300)
+      animation: beam 800s linear
+
+
+    &.big
+      +size(8px, 8px)
+      +stars(150)
+      animation: beam 1600s linear

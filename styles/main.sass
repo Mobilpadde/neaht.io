@@ -1,0 +1,40 @@
+$heaven: #292f33
+$bird: #55acee
+$ease: .2s
+$radius: 2px
+
+=size($w, $h)
+  width: $w
+  height: $h
+
+html
+  height: 100%
+
+body
+  font: 16px/1.1 Dosis, sans-serif
+  background: #fff
+  height: 100%
+  margin: 0
+  padding: 0
+
+  #root
+    height: 100%
+
+    #app
+      +size(100%, 100%)
+      display: inline-flex
+      justify-content: space-around
+      overflow: hidden
+
+      > *
+        +size(100%, inherit)
+
+      @import _button
+
+      @import _heaven
+      @import _input
+
+      @import _generator
+      @import _room
+
+      @import _utils

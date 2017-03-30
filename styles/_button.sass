@@ -1,0 +1,23 @@
+.button
+  +size(522px, 50px - 15px)
+  background: $heaven
+  color: #fff
+  font-size: 1.2em
+  text-align: center
+  margin: 5px
+  padding-top: 10px
+  display: inline-block
+  transition: background $ease ease-in-out
+
+  &:hover
+    background: mix(#fff, $heaven, 15%)
+    cursor: pointer
+
+  &.fifty
+    +size(522px / 2 - 5px, 50px - 15px)
+
+  &.bird
+    background: $bird
+
+    &:hover
+      background: mix(#fff, $bird, 15%)
